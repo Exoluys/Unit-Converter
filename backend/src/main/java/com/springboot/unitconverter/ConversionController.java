@@ -11,7 +11,10 @@ import org.springframework.web.bind.annotation.*;
 @Getter
 @RestController
 @RequestMapping("/convert")
-@CrossOrigin("http://localhost:3000")
+@CrossOrigin(origins = {
+        "http://localhost:3000",
+        "https://unit-converter-4qbtvmi3f-exoluys-projects.vercel.app"
+})
 public class ConversionController {
 
     private LengthConversionService lenService;
