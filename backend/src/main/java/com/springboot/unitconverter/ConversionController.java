@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/convert")
 @CrossOrigin(origins = {
         "http://localhost:3000",
-        "https://unit-converter-4qbtvmi3f-exoluys-projects.vercel.app"
+        "https://unit-converter-fmq8u2ls8-exoluys-projects.vercel.app/"
 })
 public class ConversionController {
 
