@@ -23,7 +23,8 @@ A Java-based Unit Converter application with a modern Next + TypeScript frontend
 ## How to Run
 ### Frontend
 The frontend of this project is deployed on **Vercel**.
-Live Demo: https://unit-converter-4qbtvmi3f-exoluys-projects.vercel.app/
+
+Live Demo: https://unit-converter-fmq8u2ls8-exoluys-projects.vercel.app/
 
 ### Backend
 The backend is implemented using **Java Spring Boot** and contains all unit conversion logic.
