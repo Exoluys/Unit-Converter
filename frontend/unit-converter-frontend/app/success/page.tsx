@@ -1,11 +1,10 @@
 "use client";
 
-export const dynamic = "force-dynamic";
-
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { Suspense } from 'react';
 
-const SuccessPage = () => {
+function SuccessContent() {
     const searchParams = useSearchParams();
     const result = searchParams.get('result');
     const from = searchParams.get('from');
@@ -23,7 +22,7 @@ const SuccessPage = () => {
                 <h2 className="text-2xl font-bold text-gray-800">Conversion Successful!</h2>
 
                 <div className="mt-4 bg-gray-50 rounded-lg p-4">
-                    <p className="text-3xl font-bold text-gray-800">{result}</p>
+                    <p className="text-3xl font-bold text-gray-800">{result || "0"}</p>
                     {from && to && (
                         <p className="text-sm text-gray-500 mt-2">{from} → {to}</p>
                     )}
@@ -34,8 +33,17 @@ const SuccessPage = () => {
                 </Link>
             </div>
         </div>
-    )
+    );
 }
 
-
-export default SuccessPage;
+export default function SuccessPage() {
+    return (
+        <Suspense fallback={
+            <div className="min-h-screen bg-black flex items-center justify-center text-white">
+                Loading...
+            </div>
+        }>
+            <SuccessContent />
+        </Suspense>
+    );
+}
